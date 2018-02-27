@@ -2,16 +2,40 @@
 ---
 
 <!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml/">
+<html xmlns="https://www.w3.org/1999/xhtml/" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
+    <link rel="canonical" href="{{ '/' | absolute_url }}" />
 
     <title>Basin Project</title>
-    <meta name="description" content="A server-side Minecraft modding framework" />
+    <meta name="description" content="A modern server-side modding API" />
+    <meta name="keywords" content="Basin,Minecraft,Server,API,plugin" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
-    <link rel="shortcut icon" type="image/png" href="/assets/image/logo-icon.png" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="{{ '/favicon.ico' | relative_url }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ '/assets/image/logo-icon.png' | relative_url }}" />
+
+    <meta property="og:title" content="Basin Modding API" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ '/assets/image/logo.png' | absolute_url }}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@BasinMC" />
+    <meta property="og:image" content="{{ '/assets/image/logo.png' | absolute_url }}" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "{{ '/' | absolute_url }}",
+      "name": "Basin Project",
+      "logo": "{{ '/assets/image/logo.png' | absolute_url }}",
+      "sameAs": [
+        "https://twitter.com/BasinMC",
+        "https://github.com/BasinMC"
+      ]
+    }
+    </script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/style/basin.css" />
