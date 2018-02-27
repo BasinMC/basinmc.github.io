@@ -40,38 +40,125 @@
     <link rel="stylesheet" type="text/css" href="assets/style/basin.css" />
   </head>
   <body>
-    <main id="page-container" class="ui basic inverted segment">
-      <section id="header"  class="ui basic container segment">
-        <div id="page-menu" class="ui large inverted secondary menu">
-          <a href="/" class="link item">
-            <img class="ui small image" src="assets/image/logo-monochrome-light.svg" />
-          </a>
+    <header id="header-container" class="ui inverted vertical very padded segment">
+      <section id="header"  class="ui container">
+        <header class="ui basic container segment">
+          <div class="ui large inverted secondary menu">
+            <a href="/" class="link item">
+              <img class="ui small image" src="assets/image/logo-monochrome-light.svg" />
+            </a>
 
-          <div class="large right menu">
-            <a href="https://twitter.com/BasinMC" class="item">
-              <i class="twitter icon"></i>
-              Twitter
-            </a>
-            <a href="https://github.com/BasinMC" class="item">
-              <i class="github icon"></i>
-              GitHub
-            </a>
+            <div class="large right menu">
+              <a href="https://twitter.com/BasinMC" class="item">
+                <i class="twitter icon"></i>
+                Twitter
+              </a>
+              <a href="https://github.com/BasinMC" class="item">
+                <i class="github icon"></i>
+                GitHub
+              </a>
+            </div>
           </div>
+        </header>
+        <main class="ui basic container segment">
+          <article id="jumbotron">
+            <h3 class="ui inverted header">A modern server-side modding API</h3>
+            <h4 class="ui inverted header">Coming Soon</h4>
+            <a href="https://github.com/BasinMC" class="ui big inverted button">
+              <i class="github icon"></i>
+              Get Involved
+            </a>
+          </article>
+        </main>
+        <footer></footer>
+      </section>
+    </header>
+    <main class="ui vertical very padded segment content-container">
+      <section class="ui content container">
+        <h2 class="ui center aligned header">Our Projects</h2>
+
+        <div class="ui two cards">
+          {% for repository in site.github.public_repositories %}
+            {% unless repository.archived or repository.name == "basinmc.github.io"  %}
+              <a class="ui card" href="{{ repository.html_url }}">
+                <div class="content">
+                  {% capture icon_path %}/assets/icon/{{ repository.name }}.png{% endcapture %}
+                  {% assign custom_icon = false %}
+                  {% for static_file in site.static_files %}
+                    {% if static_file.path == icon_path %}
+                      {% assign custom_icon = true %}
+                    {% endif %}
+                  {% endfor %}
+                  <img class="ui left floated mini image" src="{% if custom_icon %}{{ icon_path | relative_url }}{% else %}{{ site.defaultIconPath | relative_url }}{% endif %}" />
+                  <div class="header">
+                    <div class="content">
+                      {{ repository.name }}
+                    </div>
+                  </div>
+                  <div class="meta">{{ repository.full_name }}</div>
+                </div>
+                <div class="content">
+                  <div class="description">
+                    {% if repository.description %}
+                      {{ repository.description }}
+                    {% else %}
+                      No description given yet
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="extra content">
+                  <div class="ui horizontal list">
+                    <div class="item">
+                      <i class="eye icon"></i>
+                      {{ repository.watchers_count }}
+                    </div>
+                    <div class="item">
+                      <i class="star icon"></i>
+                      {{ repository.stargazers_count }}
+                    </div>
+                  </div>
+                </div>
+              </a>
+            {% endunless %}
+          {% endfor %}
         </div>
       </section>
-      <main id="main" class="ui basic container segment">
-        <article id="jumbotron">
-          <h3 class="ui header">A modern server-side modding API</h3>
-          <h4 class="ui header">Coming Soon</h4>
-          <a href="https://github.com/BasinMC" class="ui big inverted button">
-            <i class="github icon"></i>
-            Get Involved
-          </a>
-        </article>
-      </main>
-      <footer id="footer" class="ui basic container segment">
-        <p id="copyright">Copyright &copy; 2016-2018 Basin Project</p>
-      </footer>
-    </header>
+    </main>
+    <section class="ui vertical very padded inverted segment highlight-container">
+      <section class="ui highlight container">
+        <h2 class="ui inverted header">Help document Basin</h2>
+        <p>This entire site is open source and thus open to contributions</p>
+        <a class="ui big inverted button" href="https://github.com/BasinMC/basinmc.github.io">
+          <i class="heart icon"></i>
+          Improve it
+        </a>
+      </section>
+    </section>
+    <main class="ui vertical very padded segment content-container">
+      <section class="ui content container">
+        <h2 class="ui center aligned header">Our Team</h2>
+
+        <div class="ui six centered cards">
+          {% for member in site.github.organization_members %}
+            <a class="ui card" href="{{ member.html_url }}">
+              <div class="image">
+                <img src="{{ member.avatar_url }}" />
+              </div>
+              <div class="content">
+                <div class="header">{{ member.login }}</div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+    <footer id="footer-container" class="ui inverted vertical very padded segment">
+      <section id="footer" class="ui container">
+        <p id="copyright">
+          git-{{ site.github.build_revision | slice: 0, 8 }}<br />
+          Copyright &copy; 2016-2018 Basin Project
+        </p>
+      </section>
+    </footer>
   </body>
 </html>

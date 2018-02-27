@@ -8,28 +8,27 @@ body {
   overflow-y: scroll;
 }
 
-#page-container {
-  min-height: 100vh;
+#header-container {
+  height: 100vh;
 
   background: $brand-color-secondary;
   background-image: url(../image/background.jpg);
   background-position: center center;
   background-size: cover;
+}
 
+#header {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-#jumbotron,
-#copyright {
-  text-align: center;
-}
-
 #jumbotron {
+  text-align: center;
+
   h3,
   h4 {
-    color: #ffffff;
     font-weight: 300;
     margin: 0;
   }
@@ -48,7 +47,21 @@ body {
   }
 }
 
-#copyright {
+.highlight-container {
+  background-color: $brand-color-secondary !important;
+  text-align: center;
+
+  a.button {
+    margin-top: 10px;
+  }
+}
+
+#footer-container {
+  background-color: $brand-color-secondary;
+}
+
+#footer {
+  text-align: center;
   color: rgba(255, 255, 255, 0.5);
 }
 
