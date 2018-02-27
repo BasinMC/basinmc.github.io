@@ -1,0 +1,50 @@
+---
+---
+
+body {
+  overflow-y: scroll;
+}
+
+#page-container {
+  min-height: 100vh;
+
+  background: #0f3443;
+  background-image: url(../image/background.jpg);
+  background-position: center center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#jumbotron,
+#copyright {
+  text-align: center;
+}
+
+#jumbotron {
+  h3,
+  h4 {
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 2.5em;
+    margin: 0 0 5px;
+  }
+
+  h4 {
+    font-size: 1.5em;
+  }
+
+  a.button {
+    margin-top: 30px;
+  }
+}
+
+#copyright {
+  color: rgba(255, 255, 255, 0.5);
+}

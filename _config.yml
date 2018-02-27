@@ -1,0 +1,5 @@
+baseurl: "" # the subpath of your site, e.g. /blog
+repository: Basin/Basin
+
+# Build settings
+markdown: kramdown
