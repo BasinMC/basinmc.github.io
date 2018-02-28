@@ -149,7 +149,13 @@
                 <img src="{{ member.avatar_url }}" />
               </div>
               <div class="content">
-                <div class="header">{{ member.login }}</div>
+                {% assign real_name = site.data.members[member.login] %}
+                {% if real_name %}
+                  <div class="header">{{ real_name }}</div>
+                  <div class="meta">@{{ member.login }}</div>
+                {% else %}
+                  <div class="header">{{ member.login }}</div>
+                {% endif %}
               </div>
             </a>
           {% endfor %}
