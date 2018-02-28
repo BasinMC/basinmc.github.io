@@ -2,5 +2,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 repository: Basin/Basin
 defaultIconPath: assets/icon/default.png
 
+exclude:
+  - README.md
+  - LICENSE
+  - assets/README.md
+
 # Build settings
 markdown: kramdown
