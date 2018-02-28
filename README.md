@@ -69,4 +69,4 @@ This project is released under the terms of the
 [Creative Commons BY-SA](http://creativecommons.org/licenses/by-sa/4.0/), Version 4.0 License.
 
 **Note:** The Basin logo is excluded from this license declaration and remains
-property of the Basin Team (see [LICENSE](assets/README.md)).
+property of [Torchmind](https://www.torchmind.com) (see [LICENSE](assets/README.md)).
