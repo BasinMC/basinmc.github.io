@@ -13,11 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="{{ '/favicon.ico' | relative_url }}" />
-    <link rel="shortcut icon" type="image/png" href="{{ '/assets/image/logo-icon.png' | relative_url }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ '/assets/image/social/logo-icon.png' | relative_url }}" />
 
     <meta property="og:title" content="Basin Modding API" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ '/assets/image/logo.png' | absolute_url }}" />
+    <meta property="og:image" content="{{ '/assets/image/social/logo-solid.png' | absolute_url }}" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@BasinMC" />
@@ -28,7 +28,7 @@
       "@type": "Organization",
       "url": "{{ '/' | absolute_url }}",
       "name": "Basin Project",
-      "logo": "{{ '/assets/image/logo.png' | absolute_url }}",
+      "logo": "{{ '/assets/image/social/logo.png' | absolute_url }}",
       "sameAs": [
         "https://twitter.com/BasinMC",
         "https://github.com/BasinMC"
@@ -43,23 +43,24 @@
     <header id="header-container" class="ui inverted vertical very padded segment">
       <section id="header"  class="ui container">
         <header class="ui basic container segment">
-          <div class="ui large inverted secondary menu">
-            <a href="/" class="link item">
-              <img class="ui small image" src="assets/image/logo-monochrome-light.svg" />
+          <div id="main-menu" class="ui large inverted secondary menu">
+            <a id="logo" href="/" class="link item">
+              <img class="ui small desktop image" src="assets/image/logo-monochrome-light.svg" />
+              <img class="ui tiny hidden mobile image" src="assets/image/icon-monochrome-light.svg" />
             </a>
 
-            <div class="large right menu">
-              <a href="http://webchat.esper.net/?channels=Basin" class="item">
+            <div class="right menu">
+              <a href="http://webchat.esper.net/?channels=Basin" class="link item">
                 <i class="chat icon"></i>
-                WebIRC
+                <span>WebIRC</span>
               </a>
-              <a href="https://twitter.com/BasinMC" class="item">
+              <a href="https://twitter.com/BasinMC" class="link item">
                 <i class="twitter icon"></i>
-                Twitter
+                <span>Twitter</span>
               </a>
-              <a href="https://github.com/BasinMC" class="item">
+              <a href="https://github.com/BasinMC" class="link item">
                 <i class="github icon"></i>
-                GitHub
+                <span>GitHub</span>
               </a>
             </div>
           </div>
@@ -81,7 +82,7 @@
       <section class="ui content container">
         <h2 class="ui center aligned header">Our Projects</h2>
 
-        <div class="ui two cards">
+        <div class="ui two stackable cards">
           {% for repository in site.github.public_repositories %}
             {% unless repository.archived or repository.name == "basinmc.github.io"  %}
               <a class="ui card" href="{{ repository.html_url }}">
@@ -142,7 +143,7 @@
       <section class="ui content container">
         <h2 class="ui center aligned header">Our Team</h2>
 
-        <div class="ui six centered cards">
+        <div class="ui four centered stackable members-list cards">
           {% for member in site.github.organization_members %}
             <a class="ui card" href="{{ member.html_url }}">
               <div class="image">

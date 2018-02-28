@@ -71,3 +71,63 @@ body {
   background: $brand-color;
   color: #ffffff;
 }
+
+.ui.cards.members-list .card {
+  max-width: 180px
+}
+
+/**
+ * Mobile Resolution Overrides
+ */
+@media (max-width: 500px) {
+  #main-menu {
+    justify-content: center;
+
+    .menu.right {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #logo {
+    img.desktop {
+      display: none;
+    }
+
+    img.mobile {
+      display: block;
+    }
+  }
+
+  #main-menu .item > span {
+    display: none;
+  }
+
+  .ui.cards.members-list {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-height: 300px) {
+  #header {
+    justify-content: space-around;
+
+    > main,
+    > footer {
+      display: none;
+    }
+  }
+}
+
+@media (max-height: 440px) {
+  #header > header,
+  #header > main {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
