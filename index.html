@@ -165,10 +165,13 @@
     </main>
     <footer id="footer-container" class="ui inverted vertical very padded segment">
       <section id="footer" class="ui container">
-        <p id="copyright">
-          git-{{ site.github.build_revision | slice: 0, 8 }}<br />
-          Copyright &copy; 2016-2018 Basin Project
-        </p>
+        <div id="copyright">
+          <p>git-{{ site.github.build_revision | slice: 0, 8 }}</p>
+          <p>
+            This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a><br />
+            Copyright &copy; 2016-2018 Basin Project
+          </p>
+        </div>
       </section>
     </footer>
   </body>
