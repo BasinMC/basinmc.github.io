@@ -87,7 +87,7 @@
       <section class="ui content container">
         <h2 class="ui center aligned header">Our Projects</h2>
 
-        <div class="ui two stackable cards">
+        <div class="ui three stackable cards">
           {% for repository in site.github.public_repositories %}
             {% unless repository.archived or repository.name == "basinmc.github.io"  %}
               <a class="ui card" href="{{ repository.html_url }}">
